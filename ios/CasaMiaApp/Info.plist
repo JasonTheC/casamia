@@ -33,6 +33,12 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to camera to record hand gestures for learning Italian gestures.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs access to microphone to record videos with audio for gesture recognition.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to upload videos for gesture recognition.</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text } from 'react-native';
 import HomeScreen from './HomeScreen';
 import LibraryScreen from './LibraryScreen';
+import GestureRecordScreen from './GestureRecordScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -10,12 +11,6 @@ const Tab = createBottomTabNavigator();
 const FavoritesScreen = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5F5F5' }}>
     <Text style={{ fontSize: 18, color: '#2E5BBA' }}>Favorites Screen</Text>
-  </View>
-);
-
-const ChatScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5F5F5' }}>
-    <Text style={{ fontSize: 18, color: '#2E5BBA' }}>Chat Screen</Text>
   </View>
 );
 
@@ -79,11 +74,11 @@ const MainTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Chat"
-        component={ChatScreen}
+        name="Record"
+        component={GestureRecordScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Text style={{ fontSize: 20, color: focused ? '#FFFFFF' : '#FFFFFF80' }}>💬</Text>
+            <Text style={{ fontSize: 20, color: focused ? '#FFFFFF' : '#FFFFFF80' }}>�</Text>
           ),
         }}
       />
