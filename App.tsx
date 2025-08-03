@@ -1,28 +1,33 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
+ * CASA MIA App
+ * 
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React, { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import SplashScreen from './src/screens/SplashScreen';
+import MainTabNavigator from './src/screens/MainTabNavigator';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <SafeAreaProvider>
+      {!isLoggedIn ? (
+        <SplashScreen onLogin={handleLogin} />
+      ) : (
+        <NavigationContainer>
+          <MainTabNavigator />
+        </NavigationContainer>
+      )}
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
